@@ -8,7 +8,7 @@ const ProgressBar = () => {
             setPerc((val) => {
                 if (val >= 100) {
                     clearInterval(interval); 
-                return 100; 
+                    return 100;
                 }
                 return val + 1;
             });
@@ -25,7 +25,7 @@ const ProgressBar = () => {
                     </div>
                     <p style={{position:"absolute", left:"50%", transform: "translateX(-50%)", color: perc < 50 ? "black": "white", transition: "all 0.3s ease", fontWeight: "800"}}>{perc}%</p>
             </div>
-            <h3>{perc == 100 ? "Completed":"Loading..."}</h3>
+            <h3 style={{color: perc >= 100 ? "green" : "darkred"}}>{perc == 100 ? "Completed!":"Loading..."}</h3>
         </div>
         </>
     );
